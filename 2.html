@@ -2,7 +2,7 @@
 <html class="no-js" lang="ja">
 <head>
 <meta charset="utf-8">
-<title>Isotope - sort</title>
+<title>Isotope - filter</title>
 <link rel="stylesheet" href="isotopeComponents/style.css">
 <link rel="stylesheet" href="mystyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
@@ -14,38 +14,24 @@ $(function(){
 		itemSelector: '.item',
 		masonry: {
 			columnWidth: 180
-		},
-		getSortData: {
-			number: function($elem){
-				return parseInt( $elem.find('.item-num').text(), 10 );
-			},
-			hoge: function($elem){
-				return $elem.hasClass('hoge') ? 0 : 1;
-			},
-			foo: function($elem){
-				return $elem.hasClass('foo') ? 0 : 1;
-			},
-			bar: function($elem){
-				return $elem.hasClass('bar') ? 0 : 1;
-			}
 		}
 	});
+
 });
 </script>
 </head>
 <body>
 
 <div class="notes">
-	<h1><a href="http://isotope.metafizzy.co/">Isotope</a> - sort</h1>
+	<h1><a href="http://isotope.metafizzy.co/">Isotope</a> - filter</h1>
 </div>
 <div class="playground">
 	
 	<div class="buttons">
-		<button onclick="$('#container').isotope({ sortBy: 'number', sortAscending: true })">$('#container').isotope({ sortBy: 'number', sortAscending: true })</button>
-		<button onclick="$('#container').isotope({ sortBy: 'number', sortAscending: false })">$('#container').isotope({ sortBy: 'number', sortAscending: false })</button>
-		<button onclick="$('#container').isotope({ sortBy: 'hoge', sortAscending: true })">$('#container').isotope({ sortBy: 'hoge', sortAscending: true })</button>
-		<button onclick="$('#container').isotope({ sortBy: 'foo', sortAscending: true })">$('#container').isotope({ sortBy: 'foo', sortAscending: true })</button>
-		<button onclick="$('#container').isotope({ sortBy: 'bar', sortAscending: true })">$('#container').isotope({ sortBy: 'bar', sortAscending: true })</button>
+		<button onclick="$('#container').isotope({ filter: '*' })">$('#container').isotope({ filter: '*' })</button>
+		<button onclick="$('#container').isotope({ filter: '.hoge' })">$('#container').isotope({ filter: '.hoge' })</button>
+		<button onclick="$('#container').isotope({ filter: '.foo' })">$('#container').isotope({ filter: '.foo' })</button>
+		<button onclick="$('#container').isotope({ filter: '.bar' })">$('#container').isotope({ filter: '.bar' })</button>
 	</div>
 
 	<div id="container" class="itemholder clearfix">
