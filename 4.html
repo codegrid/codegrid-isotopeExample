@@ -10,8 +10,6 @@
 <script>
 $(function(){
 
-	/* do it */
-
 	$('#container').isotope({
 		itemSelector: '.item',
 		masonry: {
@@ -43,7 +41,7 @@ $(function(){
 			$items = $items.add($item);
 			counter++;
 		}
-		$('#container').isotope('insert', $items);
+		$('#container').isotope('insert', $items); // ここで追加
 	});
 
 });
